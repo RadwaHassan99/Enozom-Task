@@ -15,7 +15,13 @@ class Schedule extends Model
         'time'
     ];
 
-    public function Train(){
-        $this->hasMany(Station::class);
+    public function train()
+    {
+        return $this->belongsTo(Train::class);
+    }
+
+    public function station()
+    {
+        return $this->belongsTo(Station::class);
     }
 }

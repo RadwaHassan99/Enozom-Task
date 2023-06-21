@@ -1,5 +1,5 @@
 <?php
-use App\Http\Controllers\Api\TestController;
+use App\Http\Controllers\Api\ScheduleController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,4 +19,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::get('tests/import',[TestController::class,'importTest']);
+Route::post('trips/available',[ScheduleController::class,'getAvailableTrips']);

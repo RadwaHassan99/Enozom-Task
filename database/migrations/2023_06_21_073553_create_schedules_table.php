@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('train_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('station_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->string('time');
+            $table->integer('trip_number');
             $table->timestamps();
         });
     }

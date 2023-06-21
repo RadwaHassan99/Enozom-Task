@@ -12,8 +12,8 @@ class Train extends Model
         'id',
         'train_name',
     ];
-
-    public function Station(){
-        $this->hasMany(Train::class);
+    public function schedules()
+    {
+        return $this->hasMany(Schedule::class);
     }
 }
