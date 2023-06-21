@@ -1,5 +1,5 @@
 <?php
-use App\Http\Controllers\Api\ScheduleController;
+use App\Http\Controllers\Api\TripController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,4 +19,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::post('trips/available',[ScheduleController::class,'getAvailableTrips']);
+Route::get('trips/available/{src_id}/{dest_id}',[TripController::class,'getTrips']);

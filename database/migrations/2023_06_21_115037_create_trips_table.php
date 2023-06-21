@@ -11,20 +11,21 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('schedules', function (Blueprint $table) {
+        Schema::create('trips', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('trip_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
-            $table->foreignId('station_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
-            $table->string('time');
+            $table->foreignId('train_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });
+
+
     }
+
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('schedules');
+        Schema::dropIfExists('trips');
     }
 };

@@ -12,8 +12,8 @@ class Train extends Model
         'id',
         'train_name',
     ];
-    public function schedules()
+    public function trips()
     {
-        return $this->hasMany(Schedule::class);
+        return $this->hasMany(Trip::class);
     }
 }
