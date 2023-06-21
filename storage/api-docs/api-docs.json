@@ -1,0 +1,83 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Your API",
+        "description": "API documentation for Your Application",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/trips/available/{src_id}/{dest_id}": {
+            "get": {
+                "tags": [
+                    "Trips"
+                ],
+                "summary": "Get trips",
+                "description": "Retrieve a list of available trips.",
+                "operationId": "9b1d2f023bf44d97ec06214a1ea6588d",
+                "parameters": [
+                    {
+                        "name": "src_id",
+                        "in": "path",
+                        "description": "Source ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "dest_id",
+                        "in": "path",
+                        "description": "Destination ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "trips": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "trip_number": {
+                                                        "type": "integer"
+                                                    },
+                                                    "train_name": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
